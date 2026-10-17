@@ -27,10 +27,11 @@ jobs:
           java-version: '21'
 
       - name: Instalar dependencias
-        run: npm install
+        run: npm install --legacy-peer-deps
 
       - name: Instalar Capacitor
-        run: |
+        run: 
+        
           npm install @capacitor/core@7 @capacitor/android@7
           npm install --save-dev @capacitor/cli@7
 
