@@ -36,16 +36,13 @@ jobs:
 
       - name: Configurar aplicacion Android
         run: |
-          cat > capacitor.config.ts <<'EOF'
-          import type { CapacitorConfig } from '@capacitor/cli';
-
-          const config: CapacitorConfig = {
-            appId: 'com.coloxus76.barcontrol',
-            appName: 'BarControl',
-            webDir: 'dist'
-          };
-
-          export default config;
+          rm -f capacitor.config.ts
+          cat > capacitor.config.json <<'EOF'
+          {
+            "appId": "com.coloxus76.barcontrol",
+            "appName": "BarControl",
+            "webDir": "dist"
+          }
           EOF
 
       - name: Compilar React
