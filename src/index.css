@@ -1,0 +1,28 @@
+@import "tailwindcss";
+
+@layer base {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+  
+  html, body {
+    background-color: #09090b;
+    color: #f4f4f5;
+    touch-action: manipulation;
+    overscroll-behavior-y: none;
+  }
+}
+
+/* Hide scrollbar for clean horizontal tab bars */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Safe area padding for notch phones */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 8px);
+}

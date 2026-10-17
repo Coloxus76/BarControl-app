@@ -1,0 +1,313 @@
+import { ContainerConfig, Drink, Ingredient, TicketConfig } from '../types/bar';
+
+export const INITIAL_CONTAINERS: ContainerConfig[] = [
+  { id: 'vaso', name: 'Vaso Estándar', capacityMl: 350 },
+  { id: 'tanque', name: 'Tanque / Jarra', capacityMl: 750 },
+  { id: 'botella', name: 'Botella Individual', capacityMl: 500 },
+];
+
+export const INITIAL_TICKETS: TicketConfig[] = [
+  {
+    id: 'blanco',
+    name: 'Ticket Blanco',
+    label: 'Agua mineral (Botella)',
+    color: '#f8fafc',
+    bgClass: 'bg-slate-100 text-slate-900',
+    borderClass: 'border-slate-300',
+    textClass: 'text-slate-100',
+    badgeBg: 'bg-white text-slate-900 border-white shadow-sm',
+    glowClass: 'shadow-[0_0_15px_rgba(255,255,255,0.4)]',
+    price: 4000,
+    containerType: 'botella',
+  },
+  {
+    id: 'verde',
+    name: 'Ticket Verde',
+    label: 'Vasos sin alcohol (Gaseosas)',
+    color: '#22c55e',
+    bgClass: 'bg-emerald-500/20 text-emerald-300',
+    borderClass: 'border-emerald-500/40',
+    textClass: 'text-emerald-400',
+    badgeBg: 'bg-emerald-500 text-slate-950 font-bold',
+    glowClass: 'shadow-[0_0_18px_rgba(34,197,94,0.35)]',
+    price: 6000,
+    containerType: 'vaso',
+  },
+  {
+    id: 'azul',
+    name: 'Ticket Azul',
+    label: 'Vasos con alcohol & tragos',
+    color: '#3b82f6',
+    bgClass: 'bg-blue-500/20 text-blue-300',
+    borderClass: 'border-blue-500/40',
+    textClass: 'text-blue-400',
+    badgeBg: 'bg-blue-500 text-slate-950 font-bold',
+    glowClass: 'shadow-[0_0_18px_rgba(59,130,246,0.35)]',
+    price: 8000,
+    containerType: 'vaso',
+  },
+  {
+    id: 'rosa',
+    name: 'Ticket Rosa',
+    label: 'Tanques 750cc (Jarras)',
+    color: '#ec4899',
+    bgClass: 'bg-pink-500/20 text-pink-300',
+    borderClass: 'border-pink-500/40',
+    textClass: 'text-pink-400',
+    badgeBg: 'bg-pink-500 text-slate-950 font-bold',
+    glowClass: 'shadow-[0_0_18px_rgba(236,72,153,0.35)]',
+    price: 12000,
+    containerType: 'tanque',
+  },
+];
+
+export const INITIAL_INGREDIENTS: Ingredient[] = [
+  // Spirits & Alcohols
+  { id: 'ing_fernet', name: 'Fernet Branca', type: 'alcohol', bottleSizeMl: 750, bottleLabel: 'Botella 750ml', stockInitialBottles: 12, stockRemainingBottles: 12 },
+  { id: 'ing_gancia', name: 'Gancia Americano', type: 'alcohol', bottleSizeMl: 950, bottleLabel: 'Botella 950ml', stockInitialBottles: 8, stockRemainingBottles: 8 },
+  { id: 'ing_vodka', name: 'Vodka Smirnoff', type: 'alcohol', bottleSizeMl: 750, bottleLabel: 'Botella 750ml', stockInitialBottles: 8, stockRemainingBottles: 8 },
+  { id: 'ing_gin', name: 'Gin', type: 'alcohol', bottleSizeMl: 700, bottleLabel: 'Botella 700ml', stockInitialBottles: 6, stockRemainingBottles: 6 },
+  { id: 'ing_ron', name: 'Ron Havana / Bacardí', type: 'alcohol', bottleSizeMl: 750, bottleLabel: 'Botella 750ml', stockInitialBottles: 6, stockRemainingBottles: 6 },
+  { id: 'ing_campari', name: 'Campari', type: 'alcohol', bottleSizeMl: 750, bottleLabel: 'Botella 750ml', stockInitialBottles: 5, stockRemainingBottles: 5 },
+  { id: 'ing_cerveza', name: 'Cerveza Tirada', type: 'alcohol', bottleSizeMl: 1000, bottleLabel: 'Litro / Barril', stockInitialBottles: 30, stockRemainingBottles: 30 },
+
+  // Mixers & Gaseosas
+  { id: 'ing_coca', name: 'Coca-Cola', type: 'mixer', bottleSizeMl: 2250, bottleLabel: 'Botella 2.25L', stockInitialBottles: 24, stockRemainingBottles: 24 },
+  { id: 'ing_sprite', name: 'Sprite', type: 'mixer', bottleSizeMl: 2250, bottleLabel: 'Botella 2.25L', stockInitialBottles: 16, stockRemainingBottles: 16 },
+  { id: 'ing_fanta', name: 'Fanta Naranja', type: 'mixer', bottleSizeMl: 2250, bottleLabel: 'Botella 2.25L', stockInitialBottles: 10, stockRemainingBottles: 10 },
+  { id: 'ing_tonica', name: 'Agua Tónica', type: 'mixer', bottleSizeMl: 1500, bottleLabel: 'Botella 1.5L', stockInitialBottles: 10, stockRemainingBottles: 10 },
+  { id: 'ing_speed', name: 'Speed Unlimited', type: 'mixer', bottleSizeMl: 250, bottleLabel: 'Lata 250ml', stockInitialBottles: 48, stockRemainingBottles: 48 },
+  { id: 'ing_pulpa_frutilla', name: 'Pulpa de Frutilla', type: 'mixer', bottleSizeMl: 1000, bottleLabel: 'Botella 1L', stockInitialBottles: 4, stockRemainingBottles: 4 },
+  { id: 'ing_pulpa_durazno', name: 'Pulpa de Durazno', type: 'mixer', bottleSizeMl: 1000, bottleLabel: 'Botella 1L', stockInitialBottles: 4, stockRemainingBottles: 4 },
+
+  // Waters & Ice
+  { id: 'ing_agua', name: 'Agua Mineral 500cc', type: 'water', bottleSizeMl: 500, bottleLabel: 'Botella 500ml', stockInitialBottles: 40, stockRemainingBottles: 40 },
+  { id: 'ing_hielo', name: 'Hielo Rolito', type: 'ice', bottleSizeMl: 1000, bottleLabel: 'Bolsa / Kg', stockInitialBottles: 30, stockRemainingBottles: 30 },
+];
+
+export const INITIAL_DRINKS: Drink[] = [
+  // 1. TICKET BLANCO ($4.000)
+  {
+    id: 'drink_agua',
+    name: 'Botella de Agua',
+    ticketId: 'blanco',
+    containerType: 'botella',
+    description: 'Agua mineral con o sin gas 500cc',
+    recipe: [
+      { ingredientId: 'ing_agua', percentage: 100 },
+    ],
+    active: true,
+    iconName: 'Droplets',
+  },
+
+  // 2. TICKET VERDE ($6.000 - Vasos sin alcohol)
+  {
+    id: 'drink_coca_vaso',
+    name: 'Coca-Cola (Vaso)',
+    ticketId: 'verde',
+    containerType: 'vaso',
+    description: 'Vaso 350cc con hielo y limón',
+    recipe: [
+      { ingredientId: 'ing_coca', percentage: 90 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'CupSoda',
+  },
+  {
+    id: 'drink_sprite_vaso',
+    name: 'Sprite (Vaso)',
+    ticketId: 'verde',
+    containerType: 'vaso',
+    description: 'Vaso 350cc con hielo',
+    recipe: [
+      { ingredientId: 'ing_sprite', percentage: 90 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'CupSoda',
+  },
+  {
+    id: 'drink_fanta_vaso',
+    name: 'Fanta Naranja (Vaso)',
+    ticketId: 'verde',
+    containerType: 'vaso',
+    description: 'Vaso 350cc con hielo',
+    recipe: [
+      { ingredientId: 'ing_fanta', percentage: 90 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'CupSoda',
+  },
+
+  // 3. TICKET AZUL ($8.000 - Vasos con alcohol)
+  {
+    id: 'drink_fernet_vaso',
+    name: 'Fernet c/ Coca (Vaso)',
+    ticketId: 'azul',
+    containerType: 'vaso',
+    description: '25% Fernet, 65% Coca-Cola, 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_fernet', percentage: 25 },
+      { ingredientId: 'ing_coca', percentage: 65 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'Wine',
+  },
+  {
+    id: 'drink_gintonic_vaso',
+    name: 'Gin Tonic (Vaso)',
+    ticketId: 'azul',
+    containerType: 'vaso',
+    description: '25% Gin, 65% Tónica, 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_gin', percentage: 25 },
+      { ingredientId: 'ing_tonica', percentage: 65 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'GlassWater',
+  },
+  {
+    id: 'drink_cubalibre_vaso',
+    name: 'Cuba Libre (Vaso)',
+    ticketId: 'azul',
+    containerType: 'vaso',
+    description: '25% Ron Havana, 65% Coca-Cola, 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_ron', percentage: 25 },
+      { ingredientId: 'ing_coca', percentage: 65 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'Wine',
+  },
+  {
+    id: 'drink_gancia_vaso',
+    name: 'Gancia c/ Sprite (Vaso)',
+    ticketId: 'azul',
+    containerType: 'vaso',
+    description: '25% Gancia, 65% Sprite, 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_gancia', percentage: 25 },
+      { ingredientId: 'ing_sprite', percentage: 65 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'Sparkles',
+  },
+  {
+    id: 'drink_cerveza_vaso',
+    name: 'Cerveza Tirada (Vaso)',
+    ticketId: 'azul',
+    containerType: 'vaso',
+    description: '100% Cerveza bien fría',
+    recipe: [
+      { ingredientId: 'ing_cerveza', percentage: 100 },
+    ],
+    active: true,
+    iconName: 'Beer',
+  },
+  {
+    id: 'drink_campari_vaso',
+    name: 'Campari Tonic (Vaso)',
+    ticketId: 'azul',
+    containerType: 'vaso',
+    description: '25% Campari, 65% Tónica, 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_campari', percentage: 25 },
+      { ingredientId: 'ing_tonica', percentage: 65 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'Flame',
+  },
+  {
+    id: 'drink_mojito_vaso',
+    name: 'Mojito Cubano (Vaso)',
+    ticketId: 'azul',
+    containerType: 'vaso',
+    description: '25% Ron, 65% Sprite/Menta, 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_ron', percentage: 25 },
+      { ingredientId: 'ing_sprite', percentage: 65 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'GlassWater',
+  },
+  {
+    id: 'drink_daiquiri_frutilla',
+    name: 'Daiquiri Frutilla (Vaso)',
+    ticketId: 'azul',
+    containerType: 'vaso',
+    description: '25% Ron, 65% Pulpa Frutilla, 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_ron', percentage: 25 },
+      { ingredientId: 'ing_pulpa_frutilla', percentage: 65 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'Cherry',
+  },
+  {
+    id: 'drink_daiquiri_durazno',
+    name: 'Daiquiri Durazno (Vaso)',
+    ticketId: 'azul',
+    containerType: 'vaso',
+    description: '25% Ron, 65% Pulpa Durazno, 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_ron', percentage: 25 },
+      { ingredientId: 'ing_pulpa_durazno', percentage: 65 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'Citrus',
+  },
+
+  // 4. TICKET ROSA ($12.000 - Tanques 750cc)
+  {
+    id: 'drink_fernet_tanque',
+    name: 'Fernet c/ Coca (Tanque 750cc)',
+    ticketId: 'rosa',
+    containerType: 'tanque',
+    description: '20% Fernet (150cc), 70% Coca (525cc), 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_fernet', percentage: 20 },
+      { ingredientId: 'ing_coca', percentage: 70 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'Flame',
+  },
+  {
+    id: 'drink_vodka_speed_tanque',
+    name: 'Vodka c/ Speed (Tanque 750cc)',
+    ticketId: 'rosa',
+    containerType: 'tanque',
+    description: '25% Vodka (187cc), 65% Speed (488cc), 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_vodka', percentage: 25 },
+      { ingredientId: 'ing_speed', percentage: 65 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'Zap',
+  },
+  {
+    id: 'drink_gancia_tanque',
+    name: 'Gancia c/ Sprite (Tanque 750cc)',
+    ticketId: 'rosa',
+    containerType: 'tanque',
+    description: '20% Gancia (150cc), 70% Sprite (525cc), 10% Hielo',
+    recipe: [
+      { ingredientId: 'ing_gancia', percentage: 20 },
+      { ingredientId: 'ing_sprite', percentage: 70 },
+      { ingredientId: 'ing_hielo', percentage: 10 },
+    ],
+    active: true,
+    iconName: 'Sparkles',
+  },
+];

@@ -1,0 +1,6 @@
+{
+  "name": "BarControl - POS & Arqueo de Bebidas",
+  "description": "App móvil rápida para barra de fiestas y eventos: despacho ágil por tickets de colores, auditoría de pedidos, cálculo de consumo en litros por porcentajes y arqueo de stock.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
